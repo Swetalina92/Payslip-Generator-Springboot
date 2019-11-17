@@ -6,13 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "payslip_audit_test")
 public class PaySlipAuditTest {
 
 	@Id
-	@GeneratedValue	
+	@GeneratedValue
 	@Column(name = "payslip_audit_id", nullable = false)
 	private Integer payslipAuditId;
 
@@ -27,7 +26,7 @@ public class PaySlipAuditTest {
 
 	@Column(name = "pay_frequency", length = 12, nullable = false)
 	private String payFrequency;
-	
+
 	@Column(name = "super_rate", length = 12, nullable = false)
 	private Integer superRate;
 
@@ -47,7 +46,12 @@ public class PaySlipAuditTest {
 	private Double superValue;
 
 	@Column(name = "pay_value", length = 40, nullable = false)
+
 	private Double payValue;
+
+	public PaySlipAuditTest() {
+
+	}
 
 	public PaySlipAuditTest(Integer payslipAuditId, String firstName, String lastName, String payDate,
 			String payFrequency, Integer superRate, Double annualSalary, Double grossIncome, Double incomeTax,
