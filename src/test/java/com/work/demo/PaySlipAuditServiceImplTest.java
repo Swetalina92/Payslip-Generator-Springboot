@@ -1,21 +1,22 @@
 package com.work.demo;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.work.demo.entity.PaySlipAuditTest;
 import com.work.demo.repository.PaySlipAuditRepositoryTest;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@DataJpaTest
 public class PaySlipAuditServiceImplTest{
+	
 	@Autowired
     private PaySlipAuditRepositoryTest paySlipAuditRepositoryTest;
-	
 	
     @Test
     public void payslipdetails_whenSave_thenGetOk() {
@@ -27,5 +28,5 @@ public class PaySlipAuditServiceImplTest{
     	PaySlipAuditTest ref2 = paySlipAuditRepositoryTest.findById(1).get();
         assertEquals("John", ref2.getFirstName());
     }
-    
+  
 }
